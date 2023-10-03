@@ -6,12 +6,15 @@ Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
 int count = 1;
-
-while(count <= number)
+if (number > 0)
 {
-    if (count % 2 == 0)
+    while (count <= number)
     {
-        Console.WriteLine($"{count}");
+        if (count % 2 == 0)
+        {
+            Console.WriteLine($"{count}");
+        }
+        count++;
     }
-    count++;
 }
+else Console.WriteLine("Неправильный ввод!");

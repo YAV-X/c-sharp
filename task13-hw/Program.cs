@@ -3,18 +3,53 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+int Prompt(string message)
+{
+    Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
+}
 
-int initValue = number;
-
-if (number < 100)
-    Console.WriteLine($"{number} -> третьей цифры нет");
-else
+int GetThirdRank(int number)
 {
     while (number > 999)
     {
         number /= 10;
     }
-    Console.WriteLine($"{initValue} -> {number % 10}");
+    return number % 10;
 }
+
+bool ValidateNumber(int number)
+{
+    if (number < 100)
+    {
+        Console.WriteLine("Третьей цифры нет!");
+        return false;
+    }
+    return true;
+}
+
+int number = Prompt("Введите число: ");
+if (ValidateNumber(number)) 
+{
+    Console.WriteLine(GetThirdRank(number));
+}
+
+
+
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+
+// int initValue = number;
+
+// if (number < 100)
+//     Console.WriteLine($"{number} -> третьей цифры нет");
+// else
+// {
+//     while (number > 999)
+//     {
+//         number /= 10;
+//     }
+//     Console.WriteLine($"{initValue} -> {number % 10}");
+// }

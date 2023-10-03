@@ -3,19 +3,39 @@
 // 782 --> 8
 // 918 --> 1
 
-Console.Write("Введите трехзначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-
-int SecondDigit(int num)
+int Prompt(string message)
 {
-    return num / 10 % 10;
+    System.Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
 }
 
-if (number > 99 && number < 1000)
+int number = Prompt("Введите трехзначное число: ");
+if (number < 100 || number >= 1000)
 {
-    int secondDigit = SecondDigit(number);
-    Console.WriteLine($"{number} --> {secondDigit}");
+    Console.WriteLine("Неправильный ввод");
+    return;
 }
-else
-        Console.WriteLine($"Неправильный ввод!");
+
+Console.WriteLine($"Введите число {number}");
+int secondRank = number / 10 % 10;
+Console.WriteLine($"Вторая цифра равна {secondRank}");
+
+
+
+// Console.Write("Введите трехзначное число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+
+// int SecondDigit(int num)
+// {
+//     return num / 10 % 10;
+// }
+
+// if (number > 99 && number < 1000)
+// {
+//     int secondDigit = SecondDigit(number);
+//     Console.WriteLine($"{number} --> {secondDigit}");
+// }
+// else
+//     Console.WriteLine($"Неправильный ввод!");
