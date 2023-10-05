@@ -5,6 +5,7 @@
 int Power(int x, int y)
 {
     int power = 1;
+
     for(int i = 1; i <= y; i++)
     {
         checked

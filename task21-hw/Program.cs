@@ -20,7 +20,6 @@ public class Answer
 
         double distance = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
         return distance;
-
     }
 
     // Не удаляйте и не меняйте метод Main! 

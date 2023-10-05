@@ -6,6 +6,7 @@ int[] CreateArray(int size)
 {
     int[] array = new int[size];
     Random rnd = new Random();
+
     for (int i = 0; i < size; i++)
     {
         array[i] = rnd.Next(99, 101);

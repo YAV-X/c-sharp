@@ -13,13 +13,15 @@ int Prompt(string message)
 void SumOfNumbers(int num)
 {
     int sum = 0;
+
     for (int i = 0; i <= num; i++)
     {
-        checked     // проверяет переполнение типа
+        checked         //! проверяет переполнение типа
         {
             sum += i;
         }
     }
+
     Console.WriteLine($"{num} --> {sum}");
 }
 

@@ -10,12 +10,14 @@ int SumOfDigits(int num)
 {
     int digit = 0;
     int result = 0;
+
     while (num > 10)
     {
         digit = num % 10;
         result += digit;
         num /= 10;
     }
+
     result += num;
     return result;
 }

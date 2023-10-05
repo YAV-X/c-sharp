@@ -12,6 +12,7 @@ int Prompt(string message)
 int Factorial(int num)
 {
     int factoial = 1;
+
     for (int i = 1; i <= num; i++)
     {
         checked         // проверяет переполнение типа
