@@ -8,25 +8,20 @@ public class Answer
     {
         // Введите свое решение ниже
         int sum = 0;
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 1; i < array.Length; i += 2)
         {
-            if (i % 2 != 0)
-            {
-                sum += array[i];
-            }
+            sum += array[i];
         }
         return sum;
-
     }
 
     public static void PrintArray(int[] array)
     {
-        // Введите свое решение ниже
-        for (int i = 0; i < array.Length; i++)
+        foreach (int number in array)
         {
-            Console.Write(array[i] + " ");
+            Console.Write($"{number}\t");
         }
-
+        Console.WriteLine();
     }
 
 
@@ -37,7 +32,7 @@ public class Answer
         if (args.Length == 0)
         {
             // Здесь вы можете поменять значения для отправки кода на Выполнение
-            array = new int[] { 42 };
+            array = new int[] { 12, 64, 28, 93, 35, 47, 6, 72, 58, 21 };
         }
         else
         {
