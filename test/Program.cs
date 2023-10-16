@@ -1,23 +1,45 @@
-﻿
+﻿//Пользователь вводит с клавиатуры M чисел.
+//Посчитайте, сколько чисел больше 0 ввёл пользователь. 
+//0, 7, 8, -2, -2 -> 2 1, -7, 567, 89, 223-> 3
 
-double[] CreateArrayRndDouble(int size, int min, int max)
+int Prompt(string message)
 {
-    double[] array = new double[size];
-    Random rnd = new Random();
-
-    for (int i = 0; i < size; i++)
+    System.Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
+}
+int[] InputArray(int length)
+{
+    int[] array = new int[length];
+    for (int i = 0; i < array.Length; i++)
     {
-        array[i] = rnd.NextDouble() * (max - min) + min;
+        array[i] = Prompt($"Ввдите {i + 1}-й элемент");
     }
     return array;
 }
-
-void PrintArrayDouble(double[] array)
+void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine($"{array[i]:F2}\t");
+        Console.WriteLine($"a[{i}] = {array[i]}");
     }
 }
+int CountPositiveNumbers(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0)
+        {
+            count++;
+        }
+    }
+    return count;
+}
 
-PrintArrayDouble(CreateArrayRndDouble(5, 1, 10));
+int lenght = Prompt("Введите числа >");
+int[] array;
+array = InputArray(lenght);
+PrintArray(array);
+Console.WriteLine($"Количество чисел > 0  - {CountPositiveNumbers(array)}");
